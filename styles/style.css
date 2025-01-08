@@ -1,0 +1,282 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  background-color: #ffffff;
+  background-image: repeating-linear-gradient(
+          to left,
+          #d3d3d3 0 2px,
+          #d3d3d300 2px 4px
+  ),
+  repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px),
+  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Inter';
+  font-variation-settings: 'wght' 400, 'wght' 785;
+  overflow: auto
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  font-family: "PressStart2P", fantasy;
+  line-height: normal;
+  text-transform: uppercase;
+  border: 2px solid black;
+  max-inline-size: 100vw;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+}
+
+.button__container {
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 5px;
+  padding: 25px 25px 23px 25px;
+}
+
+  .card__icon-button {
+    display: grid;
+    border: 2px solid transparent;
+    padding: 0;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  .card__icon-button:focus {
+    outline: none;
+  }
+
+  .card__icon-button:focus-visible {
+    border-color: #000000;
+  }
+}
+
+.card__like-button:focus {
+box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.logo-title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-start: 120px;
+  padding-block-end: 20px;
+}
+
+.subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  padding-block-end: 120px;
+}
+
+.section {
+  margin-inline: auto;
+  max-inline-size: 100vw;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 10px auto;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.card__title {
+  line-height: normal;
+  font-variation-settings: "700";
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-container img,
+.image-container svg {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+border-top: 2px solid black;
+border-bottom: 2px solid black;
+}
+
+.card p {
+  margin-bottom: 15px;
+  padding: 25px;
+}
+
+.button {
+    position: relative;
+    z-index: 1;
+    border: 2px solid #000000;
+    font-family: "PressStart2P", fantasy;
+    font-size: 14px;
+    text-transform: inherit;
+    background: #ffffff;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+  }
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #000000;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.button__icon {
+  block-size: 28px;
+  inline-size: 28px;
+}
+
+.button__text {
+
+}
+
+  .like-icon {
+    block-size: 36px;
+    inline-size: 39px;
+    border: none;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .button:focus-visible {
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-label {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+    opacity: 0.5;
+    color: magenta;
+    font-family: "PressStart2P", fantasy;
+    font-size: 14px;
+    line-height: normal;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #ffffff;
+    inset-inline-end: 13px;
+    inset-block-start: 24px;
+    mix-blend-mode: hard-light;
+  }
+
+  .button-floppy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0px;
+    margin: 0 auto;
+    margin-block-start: 52px;
+    margin-block-end: 100px;
+  }
+
+.dialog-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  inline-size: 100%;
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.bright {
+  filter: contrast(90%) brightness(120%);
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.change-hue {
+  filter: hue-rotate(90deg) saturate(250%);
+}
+
+.blur {
+  filter: blur(3px) grayscale(40%);
+}
+
+.sepia-hue {
+  filter: sepia(70%) hue-rotate(70deg);
+}
+
+.opacity {
+  filter: brightness(120%) opacity(60%) contrast(120%);
+}
+
+@supports (-webkit-text-stroke: 1px #ffffff) or (text-stroke: 1px #ffffff) {
+  .card-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+  }
+}
+
+@media screen and (width > 375px) {
+
+  .header {
+    max-inline-size: 696px;
+    margin-block-start: 100px;
+  }
+
+  .section {
+    margin-inline: auto;
+    border: 2px solid #000000;
+    background: #ffffff;
+    max-inline-size: 696px;
+  }
+
+  .button-floppy {
+    display: flex;
+    flex-direction: row;
+  }
