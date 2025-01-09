@@ -232,8 +232,8 @@ p + p {
   filter: blur(3px) grayscale(40%);
 }
 
-.sepia-hue {
-  filter: sepia(70%) hue-rotate(70deg));
+.invert {
+  filter: invert(90%);
 }
 
 .opacity {
