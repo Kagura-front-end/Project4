@@ -273,6 +273,16 @@ p + p {
   line-height: 150%;
 }
 
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+}
+
+.dialog .dialog-inner {
+  background: white;
+  position: relative;
+  z-index: 10;
+}
+
 .dialog:not([open]) {
   display: none;
 }
@@ -330,6 +340,7 @@ p + p {
   block-size: 100%;
   width: 0;
 }
+
 
 .dialog-inner {
   display: flex;
