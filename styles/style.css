@@ -13,29 +13,23 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-color: #ffffff;
-  background-image: repeating-linear-gradient(
-          to left,
-          #d3d3d3 0 2px,
-          #d3d3d300 2px 4px
-  ),
-  repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px),
-  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  background-color: var(--back-color);
+  background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Inter';
+  font-family: var(--font);
   font-variation-settings: 'wght' 400, 'wght' 785;
-  overflow: auto
+  overflow: auto;
 }
 
 .header {
   display: grid;
   justify-items: center;
   justify-content: center;
-  font-family: "PressStart2P", fantasy;
+  font-family: var(--accent-font);
   line-height: normal;
   text-transform: uppercase;
-  border: 2px solid black;
+  border: 2px solid var(--text-color);
   max-inline-size: 100vw;
   margin-block-start: 100px;
   margin-block-end: 100px;
@@ -69,7 +63,7 @@
   }
 
   .card__icon-button:focus-visible {
-    border-color: #000000;
+    border-color: var(--text-color);
   }
 
 .card__like-button:focus {
@@ -96,8 +90,8 @@ box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
 .section {
   margin-inline: auto;
   max-inline-size: 100vw;
-  border: 2px solid #000;
-  background: #fff;
+  border: 2px solid var(--text-color);
+  background: var(--back-color);
   min-width: 350px;
 }
 
@@ -106,8 +100,8 @@ box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   flex-direction: column;
   position: relative;
   margin: 10px auto;
-  background-color: white;
-  border: 2px solid black;
+  background-color: var(--back-color);
+  border: 2px solid var(--text-color);
 }
 
 .card__title {
@@ -131,12 +125,12 @@ box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   object-position: center;
   inline-size: 100%;
   aspect-ratio: 1 / 1;
-border-top: 2px solid black;
-border-bottom: 2px solid black;
+border-top: 2px solid var(--text-color);
+border-bottom: 2px solid var(--text-color);
 }
 
 .card p {
-  font-family: 'Inter';
+  font-family: var(--font);
   font-variation-settings: 'wght' 400;
   font-size: 18px;
 }
@@ -154,11 +148,11 @@ p + p {
 .button {
     position: relative;
     z-index: 1;
-    border: 2px solid #000000;
-    font-family: "PressStart2P", fantasy;
+    border: 2px solid var(--text-color);
+    font-family: var(--accent-font);
     font-size: 14px;
     text-transform: inherit;
-    background: #ffffff;
+    background: var(--back-color);
     transition: box-shadow 0.3s ease;
     cursor: pointer;
     appearance: none;
@@ -169,7 +163,7 @@ p + p {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #000000;
+  background: var(--text-color);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -180,11 +174,7 @@ p + p {
 .button__icon {
   block-size: 28px;
   inline-size: 28px;
-  color: black;
-}
-
-.button__text {
-
+  color: var(--text-color);
 }
 
   .like-icon {
@@ -198,7 +188,7 @@ p + p {
   }
 
   .button:focus-visible {
-    box-shadow: 2px 2px 0px 0px #000000;
+    box-shadow: 2px 2px 0px 0px var(--text-color);
   }
 
   .button:hover::before {
@@ -211,12 +201,12 @@ p + p {
     top: 10px;
     z-index: 3;
     opacity: 0.5;
-    color: black;
-    font-family: "PressStart2P", fantasy;
+    color: var(--text-color);
+    font-family: var(--accent-font);
     font-size: 14px;
     line-height: normal;
     text-transform: uppercase;
-    text-shadow: 0 0 1px #ffffff;
+    text-shadow: 0 0 1px var(--back-color);
     inset-inline-end: 13px;
     inset-block-start: 24px;
     mix-blend-mode: hard-light;
@@ -260,11 +250,11 @@ p + p {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  border: 2px solid black;
+  border: 2px solid var(--text-color);
   padding: 30px;
-  background-color: white;
-  color: black;
-  font-family: 'PressStart2P-Regular', sans-serif;
+  background-color: var(--back-color);
+  color: var(--text-color);
+  font-family: var(--accent-font);
   font-size: 14px;
   font-style: normal;
   max-inline-size: 357px;
@@ -274,11 +264,11 @@ p + p {
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .dialog .dialog-inner {
-  background: white;
+  background: var(--back-color);
   position: relative;
   z-index: 10;
 }
@@ -288,10 +278,11 @@ p + p {
 }
 
 .floppy {
-  fill: black;
+  fill: var(--text-color);
   inline-size: 28px;
   block-size: 28px;
-  stroke: black;
+  stroke: var(--text-color);
+  margin-left: 15px;
   /*
   mix-blend-mode: difference;
   */
@@ -307,8 +298,8 @@ p + p {
   font-weight: 400;
   line-height: 12.6px;
   padding: 15px 20px;
-  border: 2px solid black;
-  background-color: white;
+  border: 2px solid var(--text-color);
+  background-color: var(--back-color);
   cursor: pointer;
   position: relative;
   width: 80vw;
@@ -320,7 +311,7 @@ p + p {
 .button-floppy:focus-visible,
 .card__like-button:focus-visible,
 .button-save:focus-visible {
-  box-shadow: 2px 2px 0 0px black;
+  box-shadow: 2px 2px 0 0 var(--text-color);
   transition: box-shadow 0.3s ease;
 }
 
@@ -334,7 +325,7 @@ p + p {
   top: 0;
   left: 0;
   display: block;
-  background-color: black;
+  background-color: var(--text-color);
   transition: width 0.3s ease;
   inline-size: 100%;
   block-size: 100%;
@@ -351,17 +342,17 @@ p + p {
 }
 
 .floppy-inner {
-  fill: black;
+  fill: var(--text-color);
   block-size: 39px;
   inline-size: 39px;
-  stroke: black;
+  stroke: var(--text-color);
 }
 
 .dialog__text-inner {
   /*
   font-family: 'PressStart2P-Regular', sans-serif;
   */
-  font-family: "PressStart2P", fantasy;
+  font-family: var(--accent-font);
   font-size: 14px;
   text-transform: inherit;
   white-space: normal;
@@ -376,8 +367,8 @@ p + p {
   gap: 8px;
   width: 100%;
   padding: 15px 20px;
-  border: 2px solid black;
-  background-color: white;
+  border: 2px solid var(--text-color);
+  background-color: var(--back-color);
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
@@ -392,11 +383,11 @@ p + p {
   width: 100%;
 }
 
-@supports (-webkit-text-stroke: 1px #ffffff) or (text-stroke: 1px #ffffff) {
+@supports (-webkit-text-stroke: 1px var(--lbl-contour)) or (text-stroke: 1px var(--lbl-contour)) {
   .card-label {
     text-shadow: none;
-    -webkit-text-stroke: 1px #ffffff;
-    text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 1px var(--lbl-contour);
+    text-stroke: 1px var(--lbl-contour);
   }
 }
 
@@ -409,8 +400,8 @@ p + p {
 
   .section {
     margin-inline: auto;
-    border: 2px solid #000000;
-    background: #ffffff;
+    border: 2px solid var(--text-color);
+    background: var(--back-color);
     max-inline-size: 696px;
   }
 
@@ -418,6 +409,7 @@ p + p {
     flex-direction: row;
     width: 30vw;
     min-width: 335px;
+    padding: 18.5px 21px 18.5px 0;
   }
 
   .button-save {
