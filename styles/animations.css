@@ -10,6 +10,8 @@
 
 */
 
+/*my heart animation*/
+
 @keyframes heart {
     from {
         transform: scale(1);
@@ -38,72 +40,64 @@
     }
 }
 
-
-/*
-active state
-*/
-
-.like-icon:active .core {
-    fill:  #ff0000;
-    transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-    fill: #ff0000;
-    transition: fill 0.3s linear 0.05s;
-}
-
-/*
-icon styles
-*/
-
-.like-icon .core {
-    fill: #ffffff;
-    transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon .main-body {
-    fill: #ffffff;
-    transition: fill 0.3s linear;
-}
-
-.like-icon .contour {
-    fill: #000000;
-    transition: fill 0.1s linear;
+.like-icon {
+    fill: white;
+    inline-size: 39px;
+    block-size: 36px;
 }
 
 .like-icon .heart {
-    transform-origin: center;
+    transition: fill 0.1s;
+    transform-origin: center center;
+    animation: scale 0.3s ease;
+}
+
+.like-icon .main-body {
+    fill: white;
+    transition: fill 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+    fill: black;
+    transition: fill 0.5s 3ms;
+}
+
+.card__icon-button:active .main-body,
+.like-icon.is-liked .main-body {
+    fill: red;
+    transition: fill 0.3s 3ms;
+}
+
+.like-icon .core {
+    fill: white;
+    transition: fill 0.3s 5ms;
+}
+
+.card__icon-button:hover .core {
+    fill: black;
+    transition: fill 0.3s 3ms;
+}
+
+.card__icon-button:active .core,
+.like-icon.is-liked .core {
+    fill: red;
+    transition: fill 0.3s;
+}
+
+.like-icon .contour {
+    fill: black;
+}
+
+.like-icon.is-liked .contour {
+    fill: red;
+    transition: fill 0.3s 5ms;
 }
 
 .like-icon .sparks {
     opacity: 0;
-}
-
-/*
-after liking
-*/
-
-.like-icon.is-liked .core {
-    fill: #ff0000;
-    transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .main-body {
-    fill: #ff0000;
-    transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .contour {
-    fill: #ff0000;
-    transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .heart {
-    animation: heart 0.3s ease-in 0.1s 1 alternate;
+    fill: red;
 }
 
 .like-icon.is-liked .sparks {
-    animation: sparks 0.3s ease-in 0.3s 1 alternate;
+    animation: sparks 0.3s ease;
 }
-
