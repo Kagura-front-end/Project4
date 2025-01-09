@@ -200,7 +200,7 @@ p + p {
     right: 10px;
     top: 10px;
     z-index: 3;
-    opacity: 0.5;
+    opacity: 0.9;
     color: var(--text-color);
     font-family: var(--accent-font);
     font-size: 14px;
@@ -220,12 +220,12 @@ p + p {
   filter: contrast(90%) brightness(120%);
 }
 
-.invert {
-  filter: invert(100%);
+.saturate {
+  filter: saturate(120%);
 }
 
 .change-hue {
-  filter: hue-rotate(90deg) saturate(250%);
+  filter: hue-rotate(20deg);
 }
 
 .blur {
@@ -233,7 +233,7 @@ p + p {
 }
 
 .sepia-hue {
-  filter: sepia(70%) hue-rotate(70deg);
+  filter: sepia(70%) hue-rotate(70deg));
 }
 
 .opacity {
